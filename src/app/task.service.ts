@@ -19,4 +19,12 @@ export class TaskService {
       task.completed = !task.completed;
     }
   }
+
+  removeTask(id:number) {
+    const i = this.userTasks.findIndex( task => task.id === id);
+
+    if (i !== -1) {
+      this.userTasks.splice(i, 1);
+    }
+  }
 }

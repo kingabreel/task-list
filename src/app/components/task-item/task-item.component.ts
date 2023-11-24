@@ -17,4 +17,8 @@ export class TaskItemComponent {
   completeTask(id: number) {
     this.taskService.switchComplete(id);
   }
+
+  removerTask(id: number){
+    this.taskService.removeTask(id);
+  }
 }
