@@ -8,6 +8,12 @@ export class TaskService {
   nextTaskId: number = 1;
 
 
+  exampleTasks(){
+    const tasks = ['Study Calculus', 'Study Java', 'Take a break', 'Initiate an app creation', 'Study English'];
+
+    tasks.forEach(task => this.addTask(task));
+  }
+
   addTask(task: string) {
     this.userTasks.push({ id: this.nextTaskId++, title: task, completed: false });
   }
