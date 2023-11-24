@@ -7,17 +7,14 @@ import { TaskService } from 'src/app/task.service';
   styleUrls: ['./task-item.component.css']
 })
 export class TaskItemComponent {
-  taskComplete: boolean[] = [];
 
   constructor(private taskService: TaskService) {}
 
   getTasks() {
-    for(let task in this.taskService.userTasks){
-      this.taskComplete.push(false);
-    }
-
     return this.taskService.userTasks;
   }
 
-  
+  completeTask(id: number) {
+    this.taskService.switchComplete(id);
+  }
 }

@@ -12,7 +12,9 @@ export class NewTaskBoxComponent {
   constructor(private taskService: TaskService){}
 
   addTask(){
-    this.taskService.addTask(this.taskTitle);
-    this.taskTitle = '';
+    if(this.taskTitle.length >= 10){
+      this.taskService.addTask(this.taskTitle);
+      this.taskTitle = '';
+    }
   }
 }

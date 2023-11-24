@@ -4,12 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TaskService {
-  userTasks: string[] = [];
+  userTasks: { id: number, title: string, completed: boolean } [] = [];
+  nextTaskId: number = 1;
 
 
-  addTask(tarefa: string) {
-    this.userTasks.push(tarefa);
+  addTask(task: string) {
+    this.userTasks.push({ id: this.nextTaskId++, title: task, completed: false });
   }
 
-  constructor() { }
+  switchComplete(id: number) {
+    const task = this.userTasks.find(task => task.id === id);
+
+    if (task) {
+      task.completed = !task.completed;
+    }
+  }
 }

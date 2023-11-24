@@ -5,3 +5,12 @@
     background-color: #000;
     color: #ccc;
 }
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+    color: #fff;
+}

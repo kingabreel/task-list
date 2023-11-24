@@ -1,5 +1,7 @@
 <div class="task_list-container">
     <div *ngFor="let task of getTasks()">
-        <div class="task">{{ task }}</div>
+        <div class="task">
+            <p [ngClass]="task.completed ? 'completed' : 'not_completed'" >{{task.id}} - {{task.title}} <button (click)="completeTask(task.id)">Concluir</button> <button>Remover</button></p>
+        </div>
     </div>
 </div>
