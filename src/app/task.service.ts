@@ -32,7 +32,11 @@ export class TaskService {
   private organizeId() {
     this.userTasks.forEach((task, index) => {
       task.id = index + 1;
-      this.nextTaskId = index + 2;
+      if(this.userTasks.length > 1){
+        this.nextTaskId = index + 2;
+      } else {
+        this.nextTaskId = 1;
+      }
     });
   }
 }
