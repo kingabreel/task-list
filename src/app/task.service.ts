@@ -25,6 +25,14 @@ export class TaskService {
 
     if (i !== -1) {
       this.userTasks.splice(i, 1);
+      this.organizeId();
     }
+  }
+
+  private organizeId() {
+    this.userTasks.forEach((task, index) => {
+      task.id = index + 1;
+      this.nextTaskId = index + 2;
+    });
   }
 }
