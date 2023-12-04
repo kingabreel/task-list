@@ -1,5 +1,9 @@
 # TaskList
 
+![task1](src/assets/image1.png)
+![task2](src/assets/image2.png)
+![task3](src/assets/image3.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Development server
